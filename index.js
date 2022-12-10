@@ -1,7 +1,9 @@
-const accountSid = 'ACb7c80c8d17fdeb14843e4b0788adfd37'; 
-const authToken = '7369bee266aea4fe701fc0f7da521047'; 
+var accountSid = process.env.TWILIO_ACCOUNT_SID; // Your Account SID from www.twilio.com/console
+var authToken = process.env.TWILIO_AUTH_TOKEN; 
 const client = require('twilio')(accountSid, authToken); 
  
+
+//Envio simples de msg//
 client.messages 
       .create({ 
          body: 'Hello! This is an editable text message. You are free to change it and write whatever you like.', 
